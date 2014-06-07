@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Ramses.Business
 {
-    public class Class1
+    public class DeputadosBiz
     {
+        public void ObterDeputados()
+        {
+            new Data.Deputados().GetAllDeputados();
+        }
     }
 }

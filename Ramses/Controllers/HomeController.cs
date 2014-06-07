@@ -1,4 +1,5 @@
-﻿using Ramses.Models;
+﻿using Ramses.Business;
+using Ramses.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Ramses.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            new DeputadosBiz().ObterDeputados();
             return View();
         }
 
@@ -34,5 +36,5 @@ namespace Ramses.Controllers
         {
             return PartialView("_GridClients", clients);
         }
-	}
+    }
 }

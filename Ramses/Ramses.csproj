@@ -154,6 +154,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ramses.Business\Ramses.Business.csproj">
+      <Project>{7334d5e1-9613-4c59-9456-db4ceef2de05}</Project>
+      <Name>Ramses.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ramses.Data\Ramses.Data.csproj">
+      <Project>{e80ae3e0-a570-4218-a957-0ec363b48a4c}</Project>
+      <Name>Ramses.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
