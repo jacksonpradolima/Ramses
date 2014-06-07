@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ramses", "Ramses\Ramses.csproj", "{EDC2E7C5-E371-4AEB-AA96-2FD93D70AC0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ramses.WebUI", "Ramses\Ramses.WebUI.csproj", "{EDC2E7C5-E371-4AEB-AA96-2FD93D70AC0F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ramses.Data", "Ramses.Data\Ramses.Data.csproj", "{E80AE3E0-A570-4218-A957-0EC363B48A4C}"
 EndProject
