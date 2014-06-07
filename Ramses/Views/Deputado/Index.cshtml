@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div class="row">
+    @using (Html.BeginForm("LoadDeputados", "Deputado", FormMethod.Post))
+    {    
+        <input id="btnLoad" type="submit" class="btn btn-default btn-lg" value="Carregar" title="Carregar" />
+    }
+</div>
+<br />
+<!-- Chama a Action GridClients do controller atual, o qual retornar uma parcial, ou seja, renderiza aqui a grid -->
+@Html.Action("GridDeputados")

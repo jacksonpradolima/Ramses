@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramses</title>
+    <link href="@Url.Content("~/Content/alertify.default.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/alertify.core.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/alertify.bootstrap.css")" rel="stylesheet" type="text/css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -34,8 +37,28 @@
         </footer>
     </div>
 
+    <script src="@Url.Content("~/Scripts/alertify.min.js")"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+
+    <!-- start: Message Center -->
+    <script>
+        $(function () {
+            // alert dialog
+            if ("@ViewBag.AlertMessage" != null && "@ViewBag.AlertMessage" != "") {
+                alertify.alert("@ViewBag.AlertMessage");
+            }
+
+            if ("@ViewBag.ErrorMessage" != null && "@ViewBag.ErrorMessage" != "") {
+                alertify.error("@ViewBag.ErrorMessage");
+            }
+            if ("@ViewBag.SuccessMessage" != null && "@ViewBag.SuccessMessage" != "") {
+                alertify.success("@ViewBag.SuccessMessage");
+            }
+        });
+    </script>
+    <!-- end: Message Center -->
 </body>
 </html>

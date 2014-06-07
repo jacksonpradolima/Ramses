@@ -15,14 +15,22 @@ namespace Ramses.Business
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Método que carrega os deputados através de um arquivo xml para a base
+        /// </summary>
         public void Load()
         {
             XDocument doc = XDocument.Load("C:/Users/Prado Lima/documents/visual studio 2012/Projects/Ramses/Ramses.Business/Arquivos/Deputados.xml");
 
             List<Deputado> listDeputado = new List<Deputado>();
 
+            // Busca os deputados na base
+            var listOldDeputados = GetAll();
+
+            // Verifica os elementos do xml
             foreach (XElement element in doc.Descendants("Deputado"))
             {
+                // Cria um objeto do tipo Deputado
                 Deputado deputado = new Deputado()
                 {
                     Anexo = element.Element("Anexo").Value,
@@ -40,23 +48,18 @@ namespace Ramses.Business
                     UFEleito = element.Element("UFEleito").Value
                 };
 
-                if (!listDeputado.Any(o => o.ideCadastro == deputado.ideCadastro))
+                // Não adiciona os deputados já cadastrados
+                if (!listDeputado.Any(o => string.Compare(o.ideCadastro, deputado.ideCadastro, true) == 0) 
+                 && !listOldDeputados.Any(o => string.Compare(o.ideCadastro, deputado.ideCadastro, true) == 0))
+                {
                     listDeputado.Add(deputado);
-            }
-
-            listDeputado.Distinct();
-
-            foreach (var item in listDeputado)
-            {
-                try
-                {
-                    Save(item);
-                }
-                catch (Exception e)
-                {
-                    throw e;
+                    Context.AddToDeputados(deputado);
                 }
             }
+
+            // Salva todos de uma vez só
+            if (Context.HasPendingChanges())
+                this.Context.SaveChanges();
         }
     }
 }
