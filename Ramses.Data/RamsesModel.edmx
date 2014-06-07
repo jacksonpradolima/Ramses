@@ -6,8 +6,40 @@
     <edmx:StorageModels>
     <Schema Namespace="RamsesDBModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="RamsesDBModelStoreContainer">
+          <EntitySet Name="CotaParlamentar" EntityType="RamsesDBModel.Store.CotaParlamentar" store:Type="Tables" />
           <EntitySet Name="Deputados" EntityType="RamsesDBModel.Store.Deputados" store:Type="Tables" />
         </EntityContainer>
+        <EntityType Name="CotaParlamentar">
+          <Key>
+            <PropertyRef Name="ideCadastro" />
+          </Key>
+          <Property Name="txNomeParlamentar" Type="nvarchar" MaxLength="100" />
+          <Property Name="ideCadastro" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="nuCarteiraParlamentar" Type="nvarchar" MaxLength="100" />
+          <Property Name="nuLegislatura" Type="nvarchar" MaxLength="100" />
+          <Property Name="sgUF" Type="nvarchar" MaxLength="100" />
+          <Property Name="sgPartido" Type="nvarchar" MaxLength="100" />
+          <Property Name="codLegislatura" Type="nvarchar" MaxLength="100" />
+          <Property Name="numSubCota" Type="nvarchar" MaxLength="100" />
+          <Property Name="txtDescricao" Type="nvarchar" MaxLength="100" />
+          <Property Name="numEspecificacaoSubCota" Type="nvarchar" MaxLength="100" />
+          <Property Name="txtDescricaoEspecificacao" Type="nvarchar" MaxLength="100" />
+          <Property Name="txtFornecedor" Type="nvarchar" MaxLength="100" />
+          <Property Name="txtCNPJCPF" Type="nvarchar" MaxLength="100" />
+          <Property Name="txtNumero" Type="nvarchar" MaxLength="100" />
+          <Property Name="indTipoDocumento" Type="nvarchar" MaxLength="100" />
+          <Property Name="datEmissao" Type="nvarchar" MaxLength="100" />
+          <Property Name="vlrDocumento" Type="nvarchar" MaxLength="100" />
+          <Property Name="vlrGlosa" Type="nvarchar" MaxLength="100" />
+          <Property Name="vlrLiquido" Type="nvarchar" MaxLength="100" />
+          <Property Name="numMes" Type="nvarchar" MaxLength="100" />
+          <Property Name="numAno" Type="nvarchar" MaxLength="100" />
+          <Property Name="numParcela" Type="nvarchar" MaxLength="100" />
+          <Property Name="txtPassageiro" Type="nvarchar" MaxLength="100" />
+          <Property Name="txtTrecho" Type="nvarchar" MaxLength="100" />
+          <Property Name="numLote" Type="nvarchar" MaxLength="100" />
+          <Property Name="numRessarcimento" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="Deputados">
           <Key>
             <PropertyRef Name="ideCadastro" />
@@ -32,6 +64,7 @@
       <Schema Namespace="RamsesDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="RamsesDBEntities" p1:LazyLoadingEnabled="true" >
           <EntitySet Name="Deputados" EntityType="RamsesDBModel.Deputado" />
+          <EntitySet Name="CotaParlamentars" EntityType="RamsesDBModel.CotaParlamentar" />
         </EntityContainer>
         <EntityType Name="Deputado">
           <Key>
@@ -50,6 +83,37 @@
           <Property Type="String" Name="Gabinete" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Anexo" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Fone" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CotaParlamentar">
+          <Key>
+            <PropertyRef Name="ideCadastro" />
+          </Key>
+          <Property Type="String" Name="txNomeParlamentar" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ideCadastro" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="nuCarteiraParlamentar" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="nuLegislatura" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sgUF" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sgPartido" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="codLegislatura" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numSubCota" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtDescricao" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numEspecificacaoSubCota" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtDescricaoEspecificacao" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtFornecedor" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtCNPJCPF" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtNumero" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="indTipoDocumento" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="datEmissao" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="vlrDocumento" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="vlrGlosa" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="vlrLiquido" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numMes" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numAno" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numParcela" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtPassageiro" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtTrecho" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numLote" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numRessarcimento" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -73,6 +137,38 @@
                 <ScalarProperty Name="nomeParlamentar" ColumnName="nomeParlamentar" />
                 <ScalarProperty Name="numLegislatura" ColumnName="numLegislatura" />
                 <ScalarProperty Name="ideCadastro" ColumnName="ideCadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CotaParlamentars">
+            <EntityTypeMapping TypeName="RamsesDBModel.CotaParlamentar">
+              <MappingFragment StoreEntitySet="CotaParlamentar">
+                <ScalarProperty Name="numRessarcimento" ColumnName="numRessarcimento" />
+                <ScalarProperty Name="numLote" ColumnName="numLote" />
+                <ScalarProperty Name="txtTrecho" ColumnName="txtTrecho" />
+                <ScalarProperty Name="txtPassageiro" ColumnName="txtPassageiro" />
+                <ScalarProperty Name="numParcela" ColumnName="numParcela" />
+                <ScalarProperty Name="numAno" ColumnName="numAno" />
+                <ScalarProperty Name="numMes" ColumnName="numMes" />
+                <ScalarProperty Name="vlrLiquido" ColumnName="vlrLiquido" />
+                <ScalarProperty Name="vlrGlosa" ColumnName="vlrGlosa" />
+                <ScalarProperty Name="vlrDocumento" ColumnName="vlrDocumento" />
+                <ScalarProperty Name="datEmissao" ColumnName="datEmissao" />
+                <ScalarProperty Name="indTipoDocumento" ColumnName="indTipoDocumento" />
+                <ScalarProperty Name="txtNumero" ColumnName="txtNumero" />
+                <ScalarProperty Name="txtCNPJCPF" ColumnName="txtCNPJCPF" />
+                <ScalarProperty Name="txtFornecedor" ColumnName="txtFornecedor" />
+                <ScalarProperty Name="txtDescricaoEspecificacao" ColumnName="txtDescricaoEspecificacao" />
+                <ScalarProperty Name="numEspecificacaoSubCota" ColumnName="numEspecificacaoSubCota" />
+                <ScalarProperty Name="txtDescricao" ColumnName="txtDescricao" />
+                <ScalarProperty Name="numSubCota" ColumnName="numSubCota" />
+                <ScalarProperty Name="codLegislatura" ColumnName="codLegislatura" />
+                <ScalarProperty Name="sgPartido" ColumnName="sgPartido" />
+                <ScalarProperty Name="sgUF" ColumnName="sgUF" />
+                <ScalarProperty Name="nuLegislatura" ColumnName="nuLegislatura" />
+                <ScalarProperty Name="nuCarteiraParlamentar" ColumnName="nuCarteiraParlamentar" />
+                <ScalarProperty Name="ideCadastro" ColumnName="ideCadastro" />
+                <ScalarProperty Name="txNomeParlamentar" ColumnName="txNomeParlamentar" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
