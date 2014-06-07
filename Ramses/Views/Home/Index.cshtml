@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<!-- Chama a Action GridClients do controller atual, o qual retornar uma parcial, ou seja, renderiza aqui a grid -->
+@Html.Action("GriClients")
