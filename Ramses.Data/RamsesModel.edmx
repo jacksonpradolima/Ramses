@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RamsesDBModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="RamsesDBModelStoreContainer">
+          <EntitySet Name="Deputados" EntityType="RamsesDBModel.Store.Deputados" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="Deputados">
+          <Key>
+            <PropertyRef Name="ideCadastro" />
+          </Key>
+          <Property Name="ideCadastro" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="numLegislatura" Type="nvarchar" MaxLength="1000" />
+          <Property Name="nomeParlamentar" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Sexo" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Profissao" Type="nvarchar" MaxLength="1000" />
+          <Property Name="LegendaPartidoEleito" Type="nvarchar" MaxLength="1000" />
+          <Property Name="UFEleito" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Condicao" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SiTuacaoMandato" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Matricula" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Gabinete" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Anexo" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Fone" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RamsesDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="RamsesDBEntities" p1:LazyLoadingEnabled="true" >
+          <EntitySet Name="Deputados" EntityType="RamsesDBModel.Deputado" />
+        </EntityContainer>
+        <EntityType Name="Deputado">
+          <Key>
+            <PropertyRef Name="ideCadastro" />
+          </Key>
+          <Property Type="String" Name="ideCadastro" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numLegislatura" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="nomeParlamentar" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sexo" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Profissao" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LegendaPartidoEleito" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UFEleito" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Condicao" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SiTuacaoMandato" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Matricula" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Gabinete" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Anexo" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fone" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RamsesDBModelStoreContainer" CdmEntityContainer="RamsesDBEntities" >
+          <EntitySetMapping Name="Deputados">
+            <EntityTypeMapping TypeName="RamsesDBModel.Deputado">
+              <MappingFragment StoreEntitySet="Deputados">
+                <ScalarProperty Name="Fone" ColumnName="Fone" />
+                <ScalarProperty Name="Anexo" ColumnName="Anexo" />
+                <ScalarProperty Name="Gabinete" ColumnName="Gabinete" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="SiTuacaoMandato" ColumnName="SiTuacaoMandato" />
+                <ScalarProperty Name="Condicao" ColumnName="Condicao" />
+                <ScalarProperty Name="UFEleito" ColumnName="UFEleito" />
+                <ScalarProperty Name="LegendaPartidoEleito" ColumnName="LegendaPartidoEleito" />
+                <ScalarProperty Name="Profissao" ColumnName="Profissao" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="nomeParlamentar" ColumnName="nomeParlamentar" />
+                <ScalarProperty Name="numLegislatura" ColumnName="numLegislatura" />
+                <ScalarProperty Name="ideCadastro" ColumnName="ideCadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
