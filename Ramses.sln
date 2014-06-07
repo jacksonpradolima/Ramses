@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ramses", "Ramses\Ramses.csproj", "{EDC2E7C5-E371-4AEB-AA96-2FD93D70AC0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ramses.Data", "Ramses.Data\Ramses.Data.csproj", "{E80AE3E0-A570-4218-A957-0EC363B48A4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ramses.Business", "Ramses.Business\Ramses.Business.csproj", "{7334D5E1-9613-4C59-9456-DB4CEEF2DE05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{EDC2E7C5-E371-4AEB-AA96-2FD93D70AC0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDC2E7C5-E371-4AEB-AA96-2FD93D70AC0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDC2E7C5-E371-4AEB-AA96-2FD93D70AC0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E80AE3E0-A570-4218-A957-0EC363B48A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E80AE3E0-A570-4218-A957-0EC363B48A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E80AE3E0-A570-4218-A957-0EC363B48A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E80AE3E0-A570-4218-A957-0EC363B48A4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7334D5E1-9613-4C59-9456-DB4CEEF2DE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7334D5E1-9613-4C59-9456-DB4CEEF2DE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7334D5E1-9613-4C59-9456-DB4CEEF2DE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7334D5E1-9613-4C59-9456-DB4CEEF2DE05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
