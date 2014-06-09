@@ -11,10 +11,10 @@
         </EntityContainer>
         <EntityType Name="CotaParlamentar">
           <Key>
-            <PropertyRef Name="ideCadastro" />
+            <PropertyRef Name="id" />
           </Key>
           <Property Name="txNomeParlamentar" Type="nvarchar" MaxLength="100" />
-          <Property Name="ideCadastro" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ideCadastro" Type="nvarchar" MaxLength="100" />
           <Property Name="nuCarteiraParlamentar" Type="nvarchar" MaxLength="100" />
           <Property Name="nuLegislatura" Type="nvarchar" MaxLength="100" />
           <Property Name="sgUF" Type="nvarchar" MaxLength="100" />
@@ -39,6 +39,7 @@
           <Property Name="txtTrecho" Type="nvarchar" MaxLength="100" />
           <Property Name="numLote" Type="nvarchar" MaxLength="100" />
           <Property Name="numRessarcimento" Type="nvarchar" MaxLength="100" />
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="Deputados">
           <Key>
@@ -86,10 +87,10 @@
         </EntityType>
         <EntityType Name="CotaParlamentar">
           <Key>
-            <PropertyRef Name="ideCadastro" />
+            <PropertyRef Name="id" />
           </Key>
           <Property Type="String" Name="txNomeParlamentar" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="ideCadastro" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ideCadastro" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="nuCarteiraParlamentar" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="nuLegislatura" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="sgUF" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -114,6 +115,7 @@
           <Property Type="String" Name="txtTrecho" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="numLote" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="numRessarcimento" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -143,6 +145,7 @@
           <EntitySetMapping Name="CotaParlamentars">
             <EntityTypeMapping TypeName="RamsesDBModel.CotaParlamentar">
               <MappingFragment StoreEntitySet="CotaParlamentar">
+                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="numRessarcimento" ColumnName="numRessarcimento" />
                 <ScalarProperty Name="numLote" ColumnName="numLote" />
                 <ScalarProperty Name="txtTrecho" ColumnName="txtTrecho" />

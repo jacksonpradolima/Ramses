@@ -138,11 +138,11 @@ namespace Ramses.Data
         /// <summary>
         /// Create a new CotaParlamentar object.
         /// </summary>
-        /// <param name="ideCadastro">Initial value of the ideCadastro property.</param>
-        public static CotaParlamentar CreateCotaParlamentar(global::System.String ideCadastro)
+        /// <param name="id">Initial value of the id property.</param>
+        public static CotaParlamentar CreateCotaParlamentar(global::System.Int64 id)
         {
             CotaParlamentar cotaParlamentar = new CotaParlamentar();
-            cotaParlamentar.ideCadastro = ideCadastro;
+            cotaParlamentar.id = id;
             return cotaParlamentar;
         }
 
@@ -177,7 +177,7 @@ namespace Ramses.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String ideCadastro
         {
@@ -187,14 +187,11 @@ namespace Ramses.Data
             }
             set
             {
-                if (_ideCadastro != value)
-                {
-                    OnideCadastroChanging(value);
-                    ReportPropertyChanging("ideCadastro");
-                    _ideCadastro = StructuralObject.SetValidValue(value, false, "ideCadastro");
-                    ReportPropertyChanged("ideCadastro");
-                    OnideCadastroChanged();
-                }
+                OnideCadastroChanging(value);
+                ReportPropertyChanging("ideCadastro");
+                _ideCadastro = StructuralObject.SetValidValue(value, true, "ideCadastro");
+                ReportPropertyChanged("ideCadastro");
+                OnideCadastroChanged();
             }
         }
         private global::System.String _ideCadastro;
@@ -776,6 +773,33 @@ namespace Ramses.Data
         private global::System.String _numRessarcimento;
         partial void OnnumRessarcimentoChanging(global::System.String value);
         partial void OnnumRessarcimentoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value, "id");
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int64 _id;
+        partial void OnidChanging(global::System.Int64 value);
+        partial void OnidChanged();
 
         #endregion
 

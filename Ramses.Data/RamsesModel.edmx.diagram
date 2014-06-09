@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="a103adf045664870b733e7f9a0c1803c" Name="Diagram1" ZoomLevel="70" >
         <EntityTypeShape EntityType="RamsesDBModel.Deputado" Width="1.5" PointX="0.5" PointY="0.5" />
-        <EntityTypeShape EntityType="RamsesDBModel.CotaParlamentar" Width="1.5" PointX="2.375" PointY="0.5" />
+        <EntityTypeShape EntityType="RamsesDBModel.CotaParlamentar" Width="1.5" PointX="2.25" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
