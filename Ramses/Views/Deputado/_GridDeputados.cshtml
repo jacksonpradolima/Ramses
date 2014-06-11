@@ -7,15 +7,24 @@
         <div class="table-responsive">
             <div class="table table-hover table-striped">
                 @Html.Grid(Model).Columns(columns =>
-                    {                        
-                        columns.Add(m => m.ideCadastro)
-                                   .SetWidth(200)
-                                   .Titled("ideCadastro");                                   
+                    {                                                                                 
                         columns.Add(m => m.nomeParlamentar)
-                                   .Titled("nomeParlamentar").Filterable(true);
+                                   .Titled(Resources.Literals.lbl_name);
                         columns.Add(m => m.UFEleito)
-                                   .SetWidth(200)
-                                   .Titled("UFEleito");
+                                   .SetWidth(50)
+                                   .Titled(Resources.Literals.lbl_state);                        
+                        columns.Add(m => m.Profissao)
+                                   .SetWidth(250)
+                                   .Titled(Resources.Literals.lbl_profession);
+                        columns.Add(m => m.LegendaPartidoEleito)
+                                   .SetWidth(250)
+                                   .Titled(Resources.Literals.lbl_electoral_party);
+                        columns.Add(m => m.Condicao)
+                                   .SetWidth(100)
+                                   .Titled(Resources.Literals.lbl_condition);
+                        columns.Add(m => m.SiTuacaoMandato)
+                                   .SetWidth(120)
+                                   .Titled(Resources.Literals.lbl_situation);                         
                     }).WithPaging(10).Sortable(true)
             </div>
         </div>
