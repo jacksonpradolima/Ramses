@@ -43,6 +43,7 @@
     <Compile Include="Base\BaseBusiness.cs" />
     <Compile Include="Base\BizException.cs" />
     <Compile Include="Base\ErrorType.cs" />
+    <Compile Include="CotaParlamentarBiz.cs" />
     <Compile Include="DeputadosBiz.cs" />
     <Compile Include="Interfaces\IEntityFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
