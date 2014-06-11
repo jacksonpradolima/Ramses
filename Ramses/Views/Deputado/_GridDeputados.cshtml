@@ -7,10 +7,15 @@
         <div class="table-responsive">
             <div class="table table-hover table-striped">
                 @Html.Grid(Model).Columns(columns =>
-                    {
-                        columns.Add(m => m.ideCadastro).Titled("ideCadastro");
-                        columns.Add(m => m.nomeParlamentar).Titled("nomeParlamentar").Filterable(true);
-                        columns.Add(m => m.UFEleito).Titled("UFEleito");
+                    {                        
+                        columns.Add(m => m.ideCadastro)
+                                   .SetWidth(200)
+                                   .Titled("ideCadastro");                                   
+                        columns.Add(m => m.nomeParlamentar)
+                                   .Titled("nomeParlamentar").Filterable(true);
+                        columns.Add(m => m.UFEleito)
+                                   .SetWidth(200)
+                                   .Titled("UFEleito");
                     }).WithPaging(10).Sortable(true)
             </div>
         </div>
