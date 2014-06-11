@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lbl_condition" xml:space="preserve">
+    <value>Condição</value>
+  </data>
+  <data name="lbl_electoral_party" xml:space="preserve">
+    <value>Partido Eleitoral</value>
+  </data>
+  <data name="lbl_name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="lbl_profession" xml:space="preserve">
+    <value>Profissão</value>
+  </data>
+  <data name="lbl_situation" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="lbl_state" xml:space="preserve">
+    <value>Estado</value>
+  </data>
   <data name="msg_internal_error" xml:space="preserve">
     <value>Ocorreu um erro no sistema, onde já detectamos o erro e estamos trabalhando para corrigi-lo. Quando o erro for corrigido você será comunicado. Pedimos desculpas pelo transtorno.</value>
   </data>
