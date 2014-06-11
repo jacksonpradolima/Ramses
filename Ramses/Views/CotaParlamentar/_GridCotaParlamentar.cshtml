@@ -1,0 +1,87 @@
+﻿@model List<Ramses.Data.CotaParlamentar>
+@using GridMvc.Html;
+
+<!-- Página dedicada ao grid -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <div class="table table-hover table-striped">
+                @Html.Grid(Model).Columns(columns =>
+                    {                                                                                 
+                        columns.Add(m => m.txNomeParlamentar)
+                                   .Titled(Resources.Literals.lbl_name);                                               
+                        columns.Add(m => m.nuLegislatura)
+                                   .SetWidth(250)
+                                   .Titled("nuLegislatura");
+                        columns.Add(m => m.sgUF)
+                                   .SetWidth(250)
+                                   .Titled(Resources.Literals.lbl_state);
+                        columns.Add(m => m.sgPartido)
+                                   .SetWidth(100)
+                                   .Titled(Resources.Literals.lbl_electoral_party);
+                        columns.Add(m => m.codLegislatura)
+                                   .SetWidth(120)
+                                   .Titled("codLegislatura");                         
+                        columns.Add(m => m.numSubCota)
+                                   .SetWidth(50)
+                                   .Titled("numSubCota");                        
+                        columns.Add(m => m.txtDescricao)
+                                   .SetWidth(50)
+                                   .Titled("txtDescricao");                        
+                        columns.Add(m => m.txtDescricaoEspecificacao)
+                                   .SetWidth(50)
+                                   .Titled("txtDescricaoEspecificacao");                                               
+                        columns.Add(m => m.numEspecificacaoSubCota)
+                                   .SetWidth(50)
+                                   .Titled("numEspecificacaoSubCota");                        
+                        columns.Add(m => m.txtFornecedor)
+                                   .SetWidth(50)
+                                   .Titled("txtFornecedor");                        
+                        columns.Add(m => m.txtCNPJCPF)
+                                   .SetWidth(50)
+                                   .Titled("txtCNPJCPF");                        
+                        columns.Add(m => m.txtNumero)
+                                   .SetWidth(50)
+                                   .Titled("txtNumero");                        
+                        columns.Add(m => m.indTipoDocumento)
+                                   .SetWidth(50)
+                                   .Titled("indTipoDocumento");                        
+                        columns.Add(m => m.datEmissao)
+                                   .SetWidth(50)
+                                   .Titled("datEmissao");                        
+                        columns.Add(m => m.vlrDocumento)
+                                   .SetWidth(50)
+                                   .Titled("vlrDocumento");                        
+                        columns.Add(m => m.vlrGlosa)
+                                   .SetWidth(50)
+                                   .Titled("vlrGlosa");                        
+                        columns.Add(m => m.vlrLiquido)
+                                   .SetWidth(50)
+                                   .Titled("vlrLiquido");                        
+                        columns.Add(m => m.numMes)
+                                   .SetWidth(50)
+                                   .Titled("numMes");                        
+                        columns.Add(m => m.numAno)
+                                   .SetWidth(50)
+                                   .Titled("numAno");                        
+                        columns.Add(m => m.numParcela)
+                                   .SetWidth(50)
+                                   .Titled("numParcela");                        
+                        columns.Add(m => m.txtPassageiro)
+                                   .SetWidth(50)
+                                   .Titled("txtPassageiro");                        
+                        columns.Add(m => m.txtTrecho)
+                                   .SetWidth(50)
+                                   .Titled("txtTrecho");                        
+                        columns.Add(m => m.numLote)
+                                   .SetWidth(50)
+                                   .Titled("numLote");                        
+                        columns.Add(m => m.numRessarcimento)
+                                   .SetWidth(50)
+                                   .Titled("numRessarcimento");                        
+                    }).WithPaging(10).Sortable(true)
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
