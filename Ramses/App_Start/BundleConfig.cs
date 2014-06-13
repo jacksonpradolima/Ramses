@@ -26,6 +26,14 @@ namespace Ramses
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/bootstrap-responsive.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/alertify").Include(
+                      "~/Scripts/alertify.min.js"));
+
+            bundles.Add(new StyleBundle("~/Alertify/css").Include(
+                      "~/Content/Alertify/alertify.default.css",
+                      "~/Content/Alertify/alertify.core.css",
+                      "~/Content/Alertify/alertify.bootstrap.css"));
         }
     }
 }

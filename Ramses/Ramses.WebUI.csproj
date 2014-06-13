@@ -97,12 +97,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\alertify.bootstrap.css" />
-    <Content Include="Content\alertify.core.css" />
-    <Content Include="Content\alertify.default.css" />
+    <Content Include="Content\Alertify\alertify.bootstrap.css" />
+    <Content Include="Content\Alertify\alertify.core.css" />
+    <Content Include="Content\Alertify\alertify.default.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Gridmvc.css" />
+    <Content Include="Content\jbPivot\jbPivot.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -117,6 +118,13 @@
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
     <Content Include="Scripts\gridmvc.min.js" />
+    <Content Include="Scripts\jbPivot\agregate_average.js" />
+    <Content Include="Scripts\jbPivot\agregate_count.js" />
+    <Content Include="Scripts\jbPivot\agregate_distinct.js" />
+    <Content Include="Scripts\jbPivot\agregate_sum.js" />
+    <Content Include="Scripts\jbPivot\formatter_default.js" />
+    <Content Include="Scripts\jbPivot\group_distinct.js" />
+    <Content Include="Scripts\jbPivot\pivot.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -169,6 +177,7 @@
     <Content Include="Views\CotaParlamentar\Index.cshtml" />
     <Content Include="Views\Deputado\_GridDeputados.cshtml" />
     <Content Include="Views\Deputado\Index.cshtml" />
+    <Content Include="Views\CotaParlamentar\_PivotCotaParlamentar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

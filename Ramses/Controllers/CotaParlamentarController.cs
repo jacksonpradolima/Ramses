@@ -25,5 +25,14 @@ namespace Ramses.Controllers
         {
             return PartialView("_GridCotaParlamentar", new CotaParlamentarBiz().GetAll());
         }
+
+        /// <summary>
+        /// Renderiza uma pivot
+        /// </summary>
+        /// <returns>Pacial contendo a codificação da pivot</returns>
+        public ActionResult PivotCotaParlamentar()
+        {
+            return PartialView("_PivotCotaParlamentar");
+        }
     }
 }
