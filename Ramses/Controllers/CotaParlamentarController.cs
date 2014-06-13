@@ -29,10 +29,10 @@ namespace Ramses.Controllers
         /// <summary>
         /// Renderiza uma pivot
         /// </summary>
-        /// <returns>Pacial contendo a codificação da pivot</returns>
+        /// <returns>View contendo a codificação da pivot</returns>
         public ActionResult PivotCotaParlamentar()
         {
-            return PartialView("_PivotCotaParlamentar");
+            return View("PivotCotaParlamentar", new CotaParlamentarBiz().GetAll());
         }
     }
 }
