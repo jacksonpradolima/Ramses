@@ -52,9 +52,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ramses.Data\Ramses.Data.csproj">
+    <ProjectReference Include="..\Ramses.Data\Ramses.DataL.csproj">
       <Project>{e80ae3e0-a570-4218-a957-0ec363b48a4c}</Project>
-      <Name>Ramses.Data</Name>
+      <Name>Ramses.DataL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

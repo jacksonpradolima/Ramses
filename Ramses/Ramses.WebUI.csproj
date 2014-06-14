@@ -175,6 +175,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ChartExampleController.cs" />
     <Compile Include="Controllers\CotaParlamentarController.cs" />
     <Compile Include="Controllers\DeputadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -209,6 +210,7 @@
     <Content Include="Views\Deputado\_GridDeputados.cshtml" />
     <Content Include="Views\Deputado\Index.cshtml" />
     <Content Include="Views\CotaParlamentar\PivotCotaParlamentar.cshtml" />
+    <Content Include="Views\ChartExample\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -224,9 +226,9 @@
       <Project>{7334d5e1-9613-4c59-9456-db4ceef2de05}</Project>
       <Name>Ramses.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ramses.Data\Ramses.Data.csproj">
+    <ProjectReference Include="..\Ramses.Data\Ramses.DataL.csproj">
       <Project>{e80ae3e0-a570-4218-a957-0ec363b48a4c}</Project>
-      <Name>Ramses.Data</Name>
+      <Name>Ramses.DataL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

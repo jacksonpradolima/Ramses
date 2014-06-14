@@ -7,6 +7,7 @@
     @Styles.Render("~/Alertify/css")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
     @RenderSection("css", required: false)
     <script src="~/Scripts/Highcharts-4.0.1/js/highcharts.js"></script>
 </head>
@@ -25,6 +26,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Deputados", "Index", "Deputado", null, new { @class = "navbar-brand" })</li>
                     <li>@Html.ActionLink("Cota Parlamentar", "Index", "CotaParlamentar", null, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Exemplo gráfico","Index","ChartExample", null, new { @class = "navbar-brand" })</li>
                 </ul>
             </div>
         </div>
@@ -38,7 +40,7 @@
         </footer>
     </div>
     @Scripts.Render("~/bundles/alertify")    
-    @Scripts.Render("~/bundles/jquery")
+ 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <!-- start: Message Center -->
