@@ -55,7 +55,7 @@ namespace Ramses.Controllers
                         {
                             Enabled = true
                         },
-                        EnableMouseTracking = false
+                        EnableMouseTracking = true
                     }
                 })
                 //Carregar os valores do Y
