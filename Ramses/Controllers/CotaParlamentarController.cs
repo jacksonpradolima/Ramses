@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace Ramses.Controllers
 {
@@ -16,7 +17,7 @@ namespace Ramses.Controllers
             ResponseMessage();
             return View();
         }
-     
+
         /// <summary>
         /// Renderiza uma grid
         /// </summary>
@@ -32,7 +33,14 @@ namespace Ramses.Controllers
         /// <returns>View contendo a codificação da pivot</returns>
         public ActionResult PivotCotaParlamentar()
         {
-            return View("PivotCotaParlamentar", new CotaParlamentarBiz().GetAll());
+            return View("PivotCotaParlamentar");
+        }
+
+        public ActionResult ListCotaParlamentar()
+        {
+            var list = new CotaParlamentarBiz().GetAll().Take(10).ToList();
+
+            return Json(list, JsonRequestBehavior.AllowGet);
         }
     }
 }
