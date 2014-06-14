@@ -57,5 +57,22 @@
         });
     </script>
     <!-- end: Message Center -->
+    
+    <!-- Resources for JS -->
+    <script type="text/javascript">
+        $(function () {
+            //Vars para uso no cod do arquivo .js
+            btn_yes = "@Html.Raw(Resources.Literals.btn_yes)";
+            btn_no = "@Html.Raw(Resources.Literals.btn_no)";
+            btn_exit = "@Html.Raw(Resources.Literals.btn_exit)";
+            btn_delete = "@Html.Raw(Resources.Literals.btn_delete)";
+            btn_cancel = "@Html.Raw(Resources.Literals.btn_cancel)";
+            lbl_value = '@Html.Raw(Resources.Literals.lbl_value)';
+            lbl_all = '@Html.Raw(Resources.Literals.lbl_all)';
+            lbl_sum = '@Html.Raw(Resources.Literals.lbl_sum)';
+            lbl_another_fields = '@Html.Raw(Resources.Literals.lbl_another_fields)';
+        });
+    </script>
+    <!-- /resources for JS -->
 </body>
 </html>

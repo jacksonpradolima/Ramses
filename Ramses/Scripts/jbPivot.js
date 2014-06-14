@@ -468,7 +468,7 @@ $(function () {
             }];
             this._tree2table("y", this.ytree, e);
             var c = "";
-            c += "<table border='0px' cellspacing='0' cellpadding='0' class='unused_fields'><tr><th class='unused_field dropable targetU0' rel='U,0'>Outros campos</th>";
+            c += "<table border='0px' cellspacing='0' cellpadding='0' class='unused_fields'><tr><th class='unused_field dropable targetU0' rel='U,0'>" + lbl_another_fields + "</th>";
             for (d = 0; d < this.ufields.length; d++) {
                 c += "<tr><td draggable='true'";
                 m = "unused_field draggable dropable";
@@ -500,7 +500,7 @@ $(function () {
             if (this.yfields.length > 0) {
                 c += this._collapseLink("y", [])
             }
-            c += "Tudo";
+            c += lbl_all;
             c += "</th>";
             c += "</tr>\n";
             for (h = 1; h <= this.yfields.length; h++) {
@@ -593,7 +593,7 @@ $(function () {
                             c += this._collapseLink("x", f[h].index.slice(0, j))
                         }
                         if (j === 0) {
-                            c += "Tudo"
+                            c += lbl_all
                         } else {
                             c += this.fields[this.xfields[j - 1]].getStringValue(f[h].index[j - 1])
                         }

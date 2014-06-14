@@ -117,6 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btn_cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="btn_delete" xml:space="preserve">
+    <value>Deletar</value>
+  </data>
+  <data name="btn_edit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="btn_exit" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="btn_no" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="btn_yes" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="lbl_all" xml:space="preserve">
+    <value>Tudo</value>
+  </data>
+  <data name="lbl_another_fields" xml:space="preserve">
+    <value>Outros Campos</value>
+  </data>
   <data name="lbl_condition" xml:space="preserve">
     <value>Condição</value>
   </data>
@@ -134,6 +158,12 @@
   </data>
   <data name="lbl_state" xml:space="preserve">
     <value>Estado</value>
+  </data>
+  <data name="lbl_sum" xml:space="preserve">
+    <value>Soma</value>
+  </data>
+  <data name="lbl_value" xml:space="preserve">
+    <value>Valor</value>
   </data>
   <data name="msg_internal_error" xml:space="preserve">
     <value>Ocorreu um erro no sistema, onde já detectamos o erro e estamos trabalhando para corrigi-lo. Quando o erro for corrigido você será comunicado. Pedimos desculpas pelo transtorno.</value>
