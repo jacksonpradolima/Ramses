@@ -17,14 +17,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <script src="~/Scripts/jbPivot.js"></script>
 
-
     <script type="text/javascript">
         url_pivot = '@Url.Action("ListCotaParlamentar")';
         $(document).ready(function () {
+            // Se há o link para buscar os dados
             if (typeof url_pivot !== 'undefined') {
+                // Busca a lista com os valores
                 $.get(url_pivot, function (response) {
+                    // Array que vai manter os dados
                     resultData = new Array();
-
+                    // Para cada valor que retornar pegar o dado e guardar no array (claro que peguei somente alguns dados)
                     $.each(response, function (idx, result) {
                         resultData.push({
                             txNomeParlamentar: result.txNomeParlamentar,
@@ -35,18 +37,57 @@
                         });
                     });
 
-                    var i = 0;
+                    // Construção do PIVOT
                     $("#pivot1").jbPivot(
                             {
+                                // Campos do pivot (o nome do campo deve ser em minúsculo, só funcionou assim
                                 fields: {
-                                    name: { field: 'txNomeParlamentar', sort: "asc", showAll: false, agregateType: "distinct", label: "Parlamentar" },
-                                    partido: { field: 'sgPartido', sort: "asc", showAll: false, agregateType: "distinct", label: "Partido" },
-                                    state: { field: 'sgUF', sort: "asc", showAll: false, agregateType: "distinct", label: "Estado" },
-                                    vlrdocumento: { field: 'vlrDocumento', sort: "asc", showAll: false, agregateType: "distinct", groupType: "none", label: "Valor Documento" },
-                                    count: { agregateType: "count", groupType: "none", label: "Count" },
-                                    sum: { field: 'vlrLiquido', agregateType: "sum", groupType: "none", label: "Sum" },
+                                    name: {
+                                        field: 'txNomeParlamentar',
+                                        sort: "asc",
+                                        showAll: false, // Deixar como false, senão ele fica replicando
+                                        agregateType: "distinct",
+                                        label: "Parlamentar"
+                                    },
+                                    partido: {
+                                        field: 'sgPartido',
+                                        sort: "asc",
+                                        showAll: false,
+                                        agregateType: "distinct",
+                                        label: "Partido"
+                                    },
+                                    state: {
+                                        field: 'sgUF',
+                                        sort: "asc",
+                                        showAll: false,
+                                        agregateType: "distinct",
+                                        label: "Estado"
+                                    },
+                                    vlrdocumento: {
+                                        field: 'vlrDocumento',
+                                        sort: "asc",
+                                        showAll: false,
+                                        agregateType: "distinct",
+                                        groupType: "none",
+                                        label: "Valor Documento"
+                                    },
+                                    count: {
+                                        agregateType: "count",
+                                        groupType: "none",
+                                        label: "Count"
+                                    },
+                                    sum: {
+                                        field: 'vlrLiquido',
+                                        agregateType: "sum",
+                                        groupType: "none",
+                                        label: "Sum"
+                                    },
                                     average: {
-                                        field: 'vlrLiquido', agregateType: "average", groupType: "none", label: "Average", formatter: function (V, f) {
+                                        field: 'vlrLiquido',
+                                        agregateType: "average",
+                                        groupType: "none",
+                                        label: "Average",
+                                        formatter: function (V, f) {
                                             var res = null;
                                             if (typeof (V) === "number") {
                                                 res = V.toFixed(2);
@@ -55,9 +96,9 @@
                                         }
                                     }
                                 },
-                                xfields: ["partido", "name"],
-                                yfields: ["state"],
-                                zfields: ["sum", "average"],
+                                xfields: ["partido", "name"], // Quais campos que vamos colocar em X
+                                yfields: ["state"], // Quais campos que vamos colocar em Y
+                                zfields: ["sum", "average"],  // Campos de dados, só campos numéricos
                                 data: resultData,
                                 copyright: true,
                                 summary: true,
