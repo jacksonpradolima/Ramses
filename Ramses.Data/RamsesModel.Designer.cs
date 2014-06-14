@@ -96,6 +96,22 @@ namespace Ramses.Data
             }
         }
         private ObjectSet<CotaParlamentar> _CotaParlamentars;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<PibPorUF> PibPorUFs
+        {
+            get
+            {
+                if ((_PibPorUFs == null))
+                {
+                    _PibPorUFs = base.CreateObjectSet<PibPorUF>("PibPorUFs");
+                }
+                return _PibPorUFs;
+            }
+        }
+        private ObjectSet<PibPorUF> _PibPorUFs;
 
         #endregion
 
@@ -115,6 +131,14 @@ namespace Ramses.Data
         public void AddToCotaParlamentars(CotaParlamentar cotaParlamentar)
         {
             base.AddObject("CotaParlamentars", cotaParlamentar);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the PibPorUFs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPibPorUFs(PibPorUF pibPorUF)
+        {
+            base.AddObject("PibPorUFs", pibPorUF);
         }
 
         #endregion
@@ -1144,6 +1168,134 @@ namespace Ramses.Data
         private global::System.String _Fone;
         partial void OnFoneChanging(global::System.String value);
         partial void OnFoneChanged();
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="RamsesDBModel", Name="PibPorUF")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class PibPorUF : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new PibPorUF object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        public static PibPorUF CreatePibPorUF(global::System.Int32 id)
+        {
+            PibPorUF pibPorUF = new PibPorUF();
+            pibPorUF.id = id;
+            return pibPorUF;
+        }
+
+        #endregion
+
+        #region Simple Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value, "id");
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String uf
+        {
+            get
+            {
+                return _uf;
+            }
+            set
+            {
+                OnufChanging(value);
+                ReportPropertyChanging("uf");
+                _uf = StructuralObject.SetValidValue(value, true, "uf");
+                ReportPropertyChanged("uf");
+                OnufChanged();
+            }
+        }
+        private global::System.String _uf;
+        partial void OnufChanging(global::System.String value);
+        partial void OnufChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String nomeuf
+        {
+            get
+            {
+                return _nomeuf;
+            }
+            set
+            {
+                OnnomeufChanging(value);
+                ReportPropertyChanging("nomeuf");
+                _nomeuf = StructuralObject.SetValidValue(value, true, "nomeuf");
+                ReportPropertyChanged("nomeuf");
+                OnnomeufChanged();
+            }
+        }
+        private global::System.String _nomeuf;
+        partial void OnnomeufChanging(global::System.String value);
+        partial void OnnomeufChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> pib
+        {
+            get
+            {
+                return _pib;
+            }
+            set
+            {
+                OnpibChanging(value);
+                ReportPropertyChanging("pib");
+                _pib = StructuralObject.SetValidValue(value, "pib");
+                ReportPropertyChanged("pib");
+                OnpibChanged();
+            }
+        }
+        private Nullable<global::System.Double> _pib;
+        partial void OnpibChanging(Nullable<global::System.Double> value);
+        partial void OnpibChanged();
 
         #endregion
 
