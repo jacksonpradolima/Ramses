@@ -8,6 +8,7 @@
         <EntityContainer Name="RamsesDBModelStoreContainer">
           <EntitySet Name="CotaParlamentar" EntityType="RamsesDBModel.Store.CotaParlamentar" store:Type="Tables" />
           <EntitySet Name="Deputados" EntityType="RamsesDBModel.Store.Deputados" store:Type="Tables" />
+          <EntitySet Name="PibPorUF" EntityType="RamsesDBModel.Store.PibPorUF" store:Type="Tables" />
         </EntityContainer>
         <EntityType Name="CotaParlamentar">
           <Key>
@@ -59,6 +60,15 @@
           <Property Name="Anexo" Type="nvarchar" MaxLength="1000" />
           <Property Name="Fone" Type="nvarchar" MaxLength="1000" />
         </EntityType>
+        <EntityType Name="PibPorUF">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="uf" Type="nvarchar" MaxLength="2" />
+          <Property Name="nomeuf" Type="nvarchar" MaxLength="100" />
+          <Property Name="pib" Type="float" />
+        </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -66,6 +76,7 @@
         <EntityContainer Name="RamsesDBEntities" p1:LazyLoadingEnabled="true" >
           <EntitySet Name="Deputados" EntityType="RamsesDBModel.Deputado" />
           <EntitySet Name="CotaParlamentars" EntityType="RamsesDBModel.CotaParlamentar" />
+          <EntitySet Name="PibPorUFs" EntityType="RamsesDBModel.PibPorUF" />
         </EntityContainer>
         <EntityType Name="Deputado">
           <Key>
@@ -116,6 +127,15 @@
           <Property Type="String" Name="numLote" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="numRessarcimento" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="PibPorUF">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="uf" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="nomeuf" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="pib" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -172,6 +192,16 @@
                 <ScalarProperty Name="nuCarteiraParlamentar" ColumnName="nuCarteiraParlamentar" />
                 <ScalarProperty Name="ideCadastro" ColumnName="ideCadastro" />
                 <ScalarProperty Name="txNomeParlamentar" ColumnName="txNomeParlamentar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PibPorUFs">
+            <EntityTypeMapping TypeName="RamsesDBModel.PibPorUF">
+              <MappingFragment StoreEntitySet="PibPorUF">
+                <ScalarProperty Name="pib" ColumnName="pib" />
+                <ScalarProperty Name="nomeuf" ColumnName="nomeuf" />
+                <ScalarProperty Name="uf" ColumnName="uf" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
