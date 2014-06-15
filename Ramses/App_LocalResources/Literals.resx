@@ -147,6 +147,12 @@
   <data name="lbl_electoral_party" xml:space="preserve">
     <value>Partido Eleitoral</value>
   </data>
+  <data name="lbl_grafico1_subtitulo" xml:space="preserve">
+    <value>Eleitos por UF</value>
+  </data>
+  <data name="lbl_grafico1_titulo" xml:space="preserve">
+    <value>Deputados</value>
+  </data>
   <data name="lbl_name" xml:space="preserve">
     <value>Nome</value>
   </data>

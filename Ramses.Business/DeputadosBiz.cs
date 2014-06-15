@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Xml.Linq;
+using Ramses.Business.Classes;
 
 namespace Ramses.Business
 {
@@ -60,6 +61,26 @@ namespace Ramses.Business
             // Salva todos de uma vez só
             if (Context.HasPendingChanges())
                 this.Context.SaveChanges();
+        }
+
+        public List<UF_Count> getCountByUF(string[] array)
+        {
+            IEnumerable<Deputado> listaDep = new DeputadosBiz().GetAll();
+            List<UF_Count> qtdeDep = new List<UF_Count>();
+
+            foreach (string s in array)
+            {
+                //adicionar na lista
+                qtdeDep.Add(new UF_Count()
+                                    {
+                                        uf = s,//recebe a sigla do estado
+                                        qtde = listaDep.Count( i=> i.UFEleito.Equals(s.ToUpper()))//armazenar a qtde
+                                    }
+                            );
+            }
+
+            //Retornar
+            return qtdeDep;
         }
     }
 }

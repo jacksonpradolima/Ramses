@@ -211,6 +211,7 @@
     <Content Include="Views\Deputado\Index.cshtml" />
     <Content Include="Views\CotaParlamentar\PivotCotaParlamentar.cshtml" />
     <Content Include="Views\ChartExample\Index.cshtml" />
+    <Content Include="Views\Deputado\_DeputadoPorEstado.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -46,9 +46,11 @@
     <Compile Include="Base\BaseBusiness.cs" />
     <Compile Include="Base\BizException.cs" />
     <Compile Include="Base\ErrorType.cs" />
+    <Compile Include="Classes\UF_Count.cs" />
     <Compile Include="CotaParlamentarBiz.cs" />
     <Compile Include="DeputadosBiz.cs" />
     <Compile Include="Interfaces\IEntityFilter.cs" />
+    <Compile Include="PibBiz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

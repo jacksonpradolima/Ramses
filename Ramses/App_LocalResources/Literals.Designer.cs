@@ -151,6 +151,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Eleitos por UF.
+        /// </summary>
+        public static string lbl_grafico1_subtitulo {
+            get {
+                return ResourceManager.GetString("lbl_grafico1_subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deputados.
+        /// </summary>
+        public static string lbl_grafico1_titulo {
+            get {
+                return ResourceManager.GetString("lbl_grafico1_titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nome.
         /// </summary>
         public static string lbl_name {
