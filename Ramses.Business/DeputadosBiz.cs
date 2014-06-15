@@ -63,7 +63,12 @@ namespace Ramses.Business
                 this.Context.SaveChanges();
         }
 
-        public List<UF_Count> getCountByUF(string[] array)
+        /// <summary>
+        /// Retornar a quantidade de deputados por UF
+        /// </summary>
+        /// <param name="array">Array com estados Somente a sigla</param>
+        /// <returns>Retorna array no estilo ( {SC,20} , {PR,10}, necessário para uso no gráfico Point (PIE)</returns>
+        public string[,] getCountByUF(string[] array)
         {
             IEnumerable<Deputado> listaDep = new DeputadosBiz().GetAll();
             List<UF_Count> qtdeDep = new List<UF_Count>();
@@ -79,8 +84,16 @@ namespace Ramses.Business
                             );
             }
 
+            string[,] dados = new string[qtdeDep.Count, 2];
+            for (int i = 0; i < qtdeDep.Count; i++)
+            {
+                dados[i, 0] = qtdeDep.ElementAt(i).uf;
+                dados[i, 1] = qtdeDep.ElementAt(i).qtde.ToString();
+            }
+
+
             //Retornar
-            return qtdeDep;
+            return dados;
         }
     }
 }

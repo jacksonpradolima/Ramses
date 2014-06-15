@@ -70,11 +70,9 @@ namespace Ramses.Controllers
         {
             //Lista de UF
             IEnumerable<PibPorUF> listaUF = new PibBiz().GetAll();
-            List<UF_Count> listaDados = new DeputadosBiz().getCountByUF(listaUF.Select(i => i.uf).ToArray());
 
-            //Arrays do gráfico
-            var xData = listaDados.Select(i => i.uf).ToArray();
-            var yData = listaDados.Select(i => new object[] { i.qtde}).ToArray();
+            //Array2d com nro de linhas igual ao count e 2 colunas
+            string[,] dados = new DeputadosBiz().getCountByUF(listaUF.Select(i => i.uf).ToArray());
 
             //objeto chart
             var chart = new Highcharts("chart")
@@ -84,16 +82,10 @@ namespace Ramses.Controllers
                 .SetTitle(new Title { Text = Resources.Literals.lbl_grafico1_titulo })
                 //subtitulo
                 .SetSubtitle(new Subtitle { Text = Resources.Literals.lbl_grafico1_subtitulo})
-                //carregar os valores do x
-                .SetXAxis(new XAxis { Categories = xData })
                 
                 //Setar o titulo do Y
                 .SetYAxis(new YAxis { Title = new YAxisTitle { Text = "Número de Deputados" } })
-                .SetTooltip(new Tooltip
-                {
-                    Enabled = true,
-                    Formatter = @"function() { return '<b>' + this.point.name+'</b><br/>'+this.y;}"
-                })
+                .SetTooltip(new Tooltip { Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ this.y +' Deputados'; }" })
                 .SetPlotOptions(new PlotOptions
                 {
                     Pie = new PlotOptionsPie
@@ -109,13 +101,13 @@ namespace Ramses.Controllers
                 })
                 //Carregar os valores do Y
                 .SetSeries(new[]{
-                    new Series{Name="Deputados por UF", Data = new DotNet.Highcharts.Helpers.Data(yData)}
+                    new Series{Type = ChartTypes.Pie,Name="Deputados por UF", Data = new DotNet.Highcharts.Helpers.Data(dados)}
                     //Pode criar uma segunda linha usando o comando acima
                }
                );
 
             return PartialView("_DeputadoPorEstado",chart);
-            //return PartialView("_DeputadoPorEstado",new PibBiz().GetAll());
+           
         }
     }
 }
