@@ -79,26 +79,29 @@ namespace Ramses.Controllers
             //objeto chart
             var chart = new Highcharts("chart")
                 //tipo do gráfico
-                .InitChart(new Chart { DefaultSeriesType = ChartTypes.Pie})
+                .InitChart(new Chart { DefaultSeriesType = ChartTypes.Pie, PlotShadow = false})
                 //titulo
                 .SetTitle(new Title { Text = Resources.Literals.lbl_grafico1_titulo })
                 //subtitulo
                 .SetSubtitle(new Subtitle { Text = Resources.Literals.lbl_grafico1_subtitulo})
                 //carregar os valores do x
                 .SetXAxis(new XAxis { Categories = xData })
+                
                 //Setar o titulo do Y
                 .SetYAxis(new YAxis { Title = new YAxisTitle { Text = "Número de Deputados" } })
                 .SetTooltip(new Tooltip
                 {
                     Enabled = true,
-                    Formatter = @"function() { return '<b>' + this.series.name+'</b><br/>'+this.x+': '+this.y;}"
+                    Formatter = @"function() { return '<b>' + this.point.name+'</b><br/>'+this.y;}"
                 })
                 .SetPlotOptions(new PlotOptions
                 {
-                    Line = new PlotOptionsLine
+                    Pie = new PlotOptionsPie
                     {
-                        DataLabels = new PlotOptionsLineDataLabels
+                        AllowPointSelect = true,
+                        DataLabels = new PlotOptionsPieDataLabels
                         {
+                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ this.y; }",
                             Enabled = true
                         },
                         EnableMouseTracking = true
