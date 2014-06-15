@@ -1,5 +1,12 @@
-﻿
-<h3><span class="label label-primary">Deputados por UF</span></h3>
+﻿@model DotNet.Highcharts.Highcharts
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Deputados por UF</h3>
+  </div>
+  <div class="panel-body">
+      <div class="table-responsive">
+             @(Model)
+       </div>
+  </div>
+</div>
 
-@model DotNet.Highcharts.Highcharts
-@(Model)
