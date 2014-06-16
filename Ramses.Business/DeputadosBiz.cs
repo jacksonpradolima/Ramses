@@ -84,11 +84,45 @@ namespace Ramses.Business
                             );
             }
 
+
             string[,] dados = new string[qtdeDep.Count, 2];
             for (int i = 0; i < qtdeDep.Count; i++)
             {
                 dados[i, 0] = qtdeDep.ElementAt(i).uf;
                 dados[i, 1] = qtdeDep.ElementAt(i).qtde.ToString();
+            }
+
+
+            //Retornar
+            return dados;
+        }
+
+        /// <summary>
+        /// Retornar a quantidade de deputados por partido
+        /// </summary>
+        /// <param name="array">Array com estados Somente o partido</param>
+        /// <returns>Retorna array no estilo ( {PT,20} , {PTdoB,10}, necessário para uso no gráfico Point (PIE)</returns>
+        public string[,] getCountByPartido()
+        {
+            IEnumerable<Deputado> listaDep = new DeputadosBiz().GetAll();
+
+            var agrupamento = listaDep
+                    .GroupBy(i => i.LegendaPartidoEleito)
+                    .Select(g => new
+                    {
+                        Partido = g.Key,
+                        Quantidade = g.Count()
+                    });
+                            
+    
+
+            string[,] dados = new string[agrupamento.ToList().Count, 2];
+            int c=0;
+            foreach (var linha in agrupamento)
+            {
+                dados[c, 0] = linha.Partido;
+                dados[c, 1] = linha.Quantidade.ToString();
+                c++;
             }
 
 

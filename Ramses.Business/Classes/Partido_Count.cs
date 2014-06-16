@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ramses.Business.Classes
 {
-    /// <summary>
-    /// Classe quea armazena a uf de federação e a quantidade
-    /// </summary>
-    public class UF_Count
+    public class Partido_Count
     {
-        public string uf { get; set; }
+        public string partido { get; set; }
         public int qtde { get; set; }
     }
 }

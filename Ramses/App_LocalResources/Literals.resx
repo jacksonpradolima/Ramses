@@ -153,6 +153,12 @@
   <data name="lbl_grafico1_titulo" xml:space="preserve">
     <value>Deputados</value>
   </data>
+  <data name="lbl_grafico2_subtitulo" xml:space="preserve">
+    <value>Por Partido</value>
+  </data>
+  <data name="lbl_grafico2_titulo" xml:space="preserve">
+    <value>Deputados</value>
+  </data>
   <data name="lbl_name" xml:space="preserve">
     <value>Nome</value>
   </data>

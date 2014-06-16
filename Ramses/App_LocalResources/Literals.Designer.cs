@@ -169,6 +169,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Por Partido.
+        /// </summary>
+        public static string lbl_grafico2_subtitulo {
+            get {
+                return ResourceManager.GetString("lbl_grafico2_subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deputados.
+        /// </summary>
+        public static string lbl_grafico2_titulo {
+            get {
+                return ResourceManager.GetString("lbl_grafico2_titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nome.
         /// </summary>
         public static string lbl_name {

@@ -109,5 +109,50 @@ namespace Ramses.Controllers
             return PartialView("_DeputadoPorEstado",chart);
            
         }
+
+        /// <summary>
+        /// Renderiza um gráfico de pizza da qtde de deputados por partido
+        /// </summary>
+        /// <returns>Parcial contendo o gráfico dos deputados por partido</returns>
+        public ActionResult DeputadoPorPartido()
+        {
+            //Array2d com nro de linhas igual ao count e 2 colunas
+            string[,] dados = new DeputadosBiz().getCountByPartido();
+
+            //objeto chart
+            var chart = new Highcharts("chart")
+                //tipo do gráfico
+                .InitChart(new Chart { DefaultSeriesType = ChartTypes.Pie, PlotShadow = false })
+                //titulo
+                .SetTitle(new Title { Text = Resources.Literals.lbl_grafico2_titulo })
+                //subtitulo
+                .SetSubtitle(new Subtitle { Text = Resources.Literals.lbl_grafico2_subtitulo })
+
+                //Setar o titulo do Y
+                .SetYAxis(new YAxis { Title = new YAxisTitle { Text = "Número de Deputados" } })
+                .SetTooltip(new Tooltip { Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ this.y +' Deputados'; }" })
+                .SetPlotOptions(new PlotOptions
+                {
+                    Pie = new PlotOptionsPie
+                    {
+                        AllowPointSelect = true,
+                        DataLabels = new PlotOptionsPieDataLabels
+                        {
+                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ this.y; }",
+                            Enabled = true
+                        },
+                        EnableMouseTracking = true
+                    }
+                })
+                //Carregar os valores do Y
+                .SetSeries(new[]{
+                    new Series{Type = ChartTypes.Pie,Name="Deputados por Partido", Data = new DotNet.Highcharts.Helpers.Data(dados)}
+                    //Pode criar uma segunda linha usando o comando acima
+               }
+               );
+
+            return PartialView("_DeputadoPorPartido", chart);
+
+        }
     }
 }
