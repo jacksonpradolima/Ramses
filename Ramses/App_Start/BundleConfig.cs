@@ -25,7 +25,8 @@ namespace Ramses
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/bootstrap-responsive.css"));
+                      "~/Content/bootstrap-responsive.css",
+                      "~/Content/jquery-ui-1.10.4.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/alertify").Include(
                       "~/Scripts/alertify.min.js"));

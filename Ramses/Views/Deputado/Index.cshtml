@@ -11,5 +11,12 @@
 <br />*@
 <!-- Chama a Action GridClients do controller atual, o qual retornar uma parcial, ou seja, renderiza aqui a grid -->
 @Html.Action("GridDeputados")
-@Html.Action("DeputadoPorEstado")
-@Html.Action("DeputadoPorPartido")
+<div class="alert alert-info">Gráficos</div>
+<div id="tabs">
+<ul>
+<li><a href="#tabs-1">Deputado por estado</a></li>
+<li><a href="#tabs-2">Deputado por partido</a></li>
+</ul>
+<div id="tabs-1">@Html.Action("DeputadoPorEstado")</div>
+<div id="tabs-2">@Html.Action("DeputadoPorPartido")</div>
+</div>

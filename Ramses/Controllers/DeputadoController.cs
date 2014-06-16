@@ -75,7 +75,7 @@ namespace Ramses.Controllers
             string[,] dados = new DeputadosBiz().getCountByUF(listaUF.Select(i => i.uf).ToArray());
 
             //objeto chart
-            var chart = new Highcharts("chart")
+            var chart = new Highcharts("chartEstado")
                 //tipo do gráfico
                 .InitChart(new Chart { DefaultSeriesType = ChartTypes.Pie, PlotShadow = false})
                 //titulo
@@ -120,7 +120,7 @@ namespace Ramses.Controllers
             string[,] dados = new DeputadosBiz().getCountByPartido();
 
             //objeto chart
-            var chart = new Highcharts("chart")
+            var chart = new Highcharts("chartPartido")
                 //tipo do gráfico
                 .InitChart(new Chart { DefaultSeriesType = ChartTypes.Pie, PlotShadow = false })
                 //titulo

@@ -11,6 +11,12 @@
     @RenderSection("css", required: false)
     <script src="~/Scripts/Highcharts-4.0.1/js/highcharts.js"></script>
     <script src="~/Scripts/Highcharts-4.0.1/js/modules/exporting.js"></script>
+    <script src="~/Scripts/jquery-ui-1.10.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabs').tabs();
+        });
+</script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -28,6 +34,7 @@
                     <li>@Html.ActionLink("Deputados", "Index", "Deputado", null, new { @class = "navbar-brand" })</li>
                     <li>@Html.ActionLink("Cota Parlamentar", "Index", "CotaParlamentar", null, new { @class = "navbar-brand" })</li>
                     <li>@Html.ActionLink("Exemplo gráfico","Index","ChartExample", null, new { @class = "navbar-brand" })</li>
+                
                 </ul>
             </div>
         </div>
