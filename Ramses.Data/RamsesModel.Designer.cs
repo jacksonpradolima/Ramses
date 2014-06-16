@@ -563,7 +563,7 @@ namespace Ramses.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String vlrDocumento
+        public Nullable<global::System.Double> vlrDocumento
         {
             get
             {
@@ -573,13 +573,13 @@ namespace Ramses.Data
             {
                 OnvlrDocumentoChanging(value);
                 ReportPropertyChanging("vlrDocumento");
-                _vlrDocumento = StructuralObject.SetValidValue(value, true, "vlrDocumento");
+                _vlrDocumento = StructuralObject.SetValidValue(value, "vlrDocumento");
                 ReportPropertyChanged("vlrDocumento");
                 OnvlrDocumentoChanged();
             }
         }
-        private global::System.String _vlrDocumento;
-        partial void OnvlrDocumentoChanging(global::System.String value);
+        private Nullable<global::System.Double> _vlrDocumento;
+        partial void OnvlrDocumentoChanging(Nullable<global::System.Double> value);
         partial void OnvlrDocumentoChanged();
     
         /// <summary>

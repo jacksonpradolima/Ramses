@@ -159,6 +159,18 @@
   <data name="lbl_grafico2_titulo" xml:space="preserve">
     <value>Deputados</value>
   </data>
+  <data name="lbl_grafico3_subtitulo" xml:space="preserve">
+    <value>Que menos gastaram no ano atual</value>
+  </data>
+  <data name="lbl_grafico3_titulo" xml:space="preserve">
+    <value>Deputados</value>
+  </data>
+  <data name="lbl_grafico4_subtitulo" xml:space="preserve">
+    <value>Que mais gastaram no ano atual</value>
+  </data>
+  <data name="lbl_grafico4_titulo" xml:space="preserve">
+    <value>Deputados</value>
+  </data>
   <data name="lbl_name" xml:space="preserve">
     <value>Nome</value>
   </data>

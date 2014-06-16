@@ -12,3 +12,12 @@
 </div>
 @Html.Action("GridCotaParlamentar")
 
+<div class="alert alert-info">Gráficos</div>
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Ranking dos que menos gastam (10 Dep.)</a></li>
+        <li><a href="#tabs-2">Ranking dos que mais gastam (10 Dep.)</a></li>
+    </ul>
+    <div id="tabs-1">@Html.Action("CotaMenor")</div>
+    <div id="tabs-2">@Html.Action("CotaMaior")</div>
+</div>

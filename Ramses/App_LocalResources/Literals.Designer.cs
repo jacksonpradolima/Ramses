@@ -187,6 +187,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Que menos gastaram no ano atual.
+        /// </summary>
+        public static string lbl_grafico3_subtitulo {
+            get {
+                return ResourceManager.GetString("lbl_grafico3_subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deputados.
+        /// </summary>
+        public static string lbl_grafico3_titulo {
+            get {
+                return ResourceManager.GetString("lbl_grafico3_titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Que mais gastaram no ano atual.
+        /// </summary>
+        public static string lbl_grafico4_subtitulo {
+            get {
+                return ResourceManager.GetString("lbl_grafico4_subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deputados.
+        /// </summary>
+        public static string lbl_grafico4_titulo {
+            get {
+                return ResourceManager.GetString("lbl_grafico4_titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nome.
         /// </summary>
         public static string lbl_name {
