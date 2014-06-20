@@ -75,5 +75,29 @@ namespace Ramses.Business
             //Retornar
             return dados;
         }
+
+        public List<CotaParlamentar> Agrupamento()
+        { 
+            return  this.GetAll()
+                              .GroupBy(i => i.txNomeParlamentar)
+                              .Select(g => new CotaParlamentar
+                              {
+                                  txNomeParlamentar = g.Key,
+                                  vlrDocumento = g.Sum(i => Convert.ToDecimal(i.vlrDocumento)).ToString(),
+                                  vlrLiquido = g.Sum(i => Convert.ToDecimal(i.vlrLiquido)).ToString(),
+                                  sgPartido = g.First().sgPartido,
+                                  sgUF = g.First().sgUF
+                              }).ToList();
+        }
+
+        public List<CotaParlamentar> GetMore()
+        {
+            return this.Agrupamento().OrderByDescending(g => Convert.ToDecimal(g.vlrDocumento)).Take(10).ToList();
+        }
+
+        public List<CotaParlamentar> GetLess()
+        {
+            return this.Agrupamento().OrderBy(g => Convert.ToDecimal(g.vlrDocumento)).Take(10).ToList();
+        }
     }
 }

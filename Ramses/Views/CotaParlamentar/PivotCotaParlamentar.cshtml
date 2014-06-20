@@ -16,109 +16,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <script src="~/Scripts/jbPivot.js"></script>
-
     <script type="text/javascript">
-        url_pivot = '@Url.Action("ListCotaParlamentar")';
-        $(document).ready(function () {
-            // Se há o link para buscar os dados
-            if (typeof url_pivot !== 'undefined') {
-                // Busca a lista com os valores
-                $.get(url_pivot, function (response) {
-                    // Array que vai manter os dados
-                    resultData = new Array();
-                    // Para cada valor que retornar pegar o dado e guardar no array (claro que peguei somente alguns dados)
-                    $.each(response, function (idx, result) {
-                        resultData.push({
-                            txNomeParlamentar: result.txNomeParlamentar,
-                            sgUF: result.sgUF,
-                            sgPartido: result.sgPartido,
-                            vlrLiquido: result.vlrLiquido,
-                            vlrDocumento: result.vlrDocumento
-                        });
-                    });
-
-                    // Construção do PIVOT
-                    $("#pivot1").jbPivot(
-                            {
-                                // Campos do pivot (o nome do campo deve ser em minúsculo, só funcionou assim
-                                fields: {
-                                    name: {
-                                        field: 'txNomeParlamentar',
-                                        sort: "asc",
-                                        showAll: false, // Deixar como false, senão ele fica replicando
-                                        agregateType: "distinct",
-                                        label: "Parlamentar"
-                                    },
-                                    partido: {
-                                        field: 'sgPartido',
-                                        sort: "asc",
-                                        showAll: false,
-                                        agregateType: "distinct",
-                                        label: "Partido"
-                                    },
-                                    state: {
-                                        field: 'sgUF',
-                                        sort: "asc",
-                                        showAll: false,
-                                        agregateType: "distinct",
-                                        label: "Estado"
-                                    },
-                                    vlrdocumento: {
-                                        field: 'vlrDocumento',
-                                        sort: "asc",
-                                        showAll: false,
-                                        agregateType: "distinct",
-                                        groupType: "none",
-                                        label: "Valor Documento"
-                                    },
-                                    count: {
-                                        agregateType: "count",
-                                        groupType: "none",
-                                        label: "Count"
-                                    },
-                                    sum: {
-                                        field: 'vlrLiquido',
-                                        agregateType: "sum",
-                                        groupType: "none",
-                                        label: "Sum"
-                                    },
-                                    average: {
-                                        field: 'vlrLiquido',
-                                        agregateType: "average",
-                                        groupType: "none",
-                                        label: "Average",
-                                        formatter: function (V, f) {
-                                            var res = null;
-                                            if (typeof (V) === "number") {
-                                                res = V.toFixed(2);
-                                            }
-                                            return res;
-                                        }
-                                    }
-                                },
-                                xfields: ["partido", "name"], // Quais campos que vamos colocar em X
-                                yfields: ["state"], // Quais campos que vamos colocar em Y
-                                zfields: ["sum", "average"],  // Campos de dados, só campos numéricos
-                                data: resultData,
-                                copyright: true,
-                                summary: true,
-                                l_all: "All",
-                                l_unused_fields: "Available fields"
-                            }
-                    );
-                });
-            }
-        });
-
+        url_pivot_maior = '@Url.Action("ListCotaParlamentarMaior")';
+        url_pivot_menor = '@Url.Action("ListCotaParlamentarMenor")';
     </script>
+    <script src="~/Scripts/Views/CotaParlamentar.js"></script>
 }
 @section css
 {
     <link href="~/Content/jbPivot/jbPivot.css" rel="stylesheet" />
 }
-
-<div class="row">
-    <div class="col-lg-12">
-        <div id="pivot1"></div>
+<div class="alert alert-info">Pivots</div>
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Ranking dos que menos gastam (10 Dep.)</a></li>
+        <li><a href="#tabs-2">Ranking dos que mais gastam (10 Dep.)</a></li>
+    </ul>
+    <div id="tabs-1">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    <div id="pivot1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tabs-2">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    <div id="pivot2"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

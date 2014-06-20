@@ -130,9 +130,16 @@ namespace Ramses.Controllers
             return View("PivotCotaParlamentar");
         }
 
-        public ActionResult ListCotaParlamentar()
+        public ActionResult ListCotaParlamentarMaior()
         {
-            var list = new CotaParlamentarBiz().GetAll().Take(10).ToList();
+            var list = new CotaParlamentarBiz().GetMore();
+
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ListCotaParlamentarMenor()
+        {
+            var list = new CotaParlamentarBiz().GetLess();
 
             return Json(list, JsonRequestBehavior.AllowGet);
         }
