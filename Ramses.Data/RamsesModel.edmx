@@ -30,7 +30,7 @@
           <Property Name="txtNumero" Type="nvarchar" MaxLength="100" />
           <Property Name="indTipoDocumento" Type="nvarchar" MaxLength="100" />
           <Property Name="datEmissao" Type="nvarchar" MaxLength="100" />
-          <Property Name="vlrDocumento" Type="float" />
+          <Property Name="vlrDocumento" Type="nvarchar" MaxLength="100" />
           <Property Name="vlrGlosa" Type="nvarchar" MaxLength="100" />
           <Property Name="vlrLiquido" Type="nvarchar" MaxLength="100" />
           <Property Name="numMes" Type="nvarchar" MaxLength="100" />
@@ -74,10 +74,42 @@
     <edmx:ConceptualModels>
       <Schema Namespace="RamsesDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="RamsesDBEntities" p1:LazyLoadingEnabled="true" >
-          <EntitySet Name="Deputados" EntityType="RamsesDBModel.Deputado" />
           <EntitySet Name="CotaParlamentars" EntityType="RamsesDBModel.CotaParlamentar" />
+          <EntitySet Name="Deputados" EntityType="RamsesDBModel.Deputado" />
           <EntitySet Name="PibPorUFs" EntityType="RamsesDBModel.PibPorUF" />
         </EntityContainer>
+        <EntityType Name="CotaParlamentar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="String" Name="txNomeParlamentar" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ideCadastro" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="nuCarteiraParlamentar" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="nuLegislatura" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sgUF" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sgPartido" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="codLegislatura" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numSubCota" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtDescricao" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numEspecificacaoSubCota" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtDescricaoEspecificacao" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtFornecedor" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtCNPJCPF" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtNumero" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="indTipoDocumento" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="datEmissao" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="vlrDocumento" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="vlrGlosa" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="vlrLiquido" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numMes" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numAno" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numParcela" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtPassageiro" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txtTrecho" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numLote" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="numRessarcimento" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
         <EntityType Name="Deputado">
           <Key>
             <PropertyRef Name="ideCadastro" />
@@ -96,38 +128,6 @@
           <Property Type="String" Name="Anexo" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Fone" MaxLength="1000" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="CotaParlamentar">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="txNomeParlamentar" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="ideCadastro" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="nuCarteiraParlamentar" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="nuLegislatura" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="sgUF" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="sgPartido" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="codLegislatura" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="numSubCota" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="txtDescricao" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="numEspecificacaoSubCota" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="txtDescricaoEspecificacao" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="txtFornecedor" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="txtCNPJCPF" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="txtNumero" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="indTipoDocumento" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="datEmissao" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="vlrDocumento" Type="Double" />
-          <Property Name="vlrGlosa" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="vlrLiquido" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="numMes" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="numAno" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="numParcela" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="txtPassageiro" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="txtTrecho" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="numLote" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="numRessarcimento" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int64" />
-        </EntityType>
         <EntityType Name="PibPorUF">
           <Key>
             <PropertyRef Name="id" />
@@ -137,31 +137,12 @@
           <Property Type="String" Name="nomeuf" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="Double" Name="pib" />
         </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="RamsesDBModelStoreContainer" CdmEntityContainer="RamsesDBEntities" >
-          <EntitySetMapping Name="Deputados">
-            <EntityTypeMapping TypeName="RamsesDBModel.Deputado">
-              <MappingFragment StoreEntitySet="Deputados">
-                <ScalarProperty Name="Fone" ColumnName="Fone" />
-                <ScalarProperty Name="Anexo" ColumnName="Anexo" />
-                <ScalarProperty Name="Gabinete" ColumnName="Gabinete" />
-                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
-                <ScalarProperty Name="SiTuacaoMandato" ColumnName="SiTuacaoMandato" />
-                <ScalarProperty Name="Condicao" ColumnName="Condicao" />
-                <ScalarProperty Name="UFEleito" ColumnName="UFEleito" />
-                <ScalarProperty Name="LegendaPartidoEleito" ColumnName="LegendaPartidoEleito" />
-                <ScalarProperty Name="Profissao" ColumnName="Profissao" />
-                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
-                <ScalarProperty Name="nomeParlamentar" ColumnName="nomeParlamentar" />
-                <ScalarProperty Name="numLegislatura" ColumnName="numLegislatura" />
-                <ScalarProperty Name="ideCadastro" ColumnName="ideCadastro" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CotaParlamentars">
             <EntityTypeMapping TypeName="RamsesDBModel.CotaParlamentar">
               <MappingFragment StoreEntitySet="CotaParlamentar">
@@ -192,6 +173,25 @@
                 <ScalarProperty Name="nuCarteiraParlamentar" ColumnName="nuCarteiraParlamentar" />
                 <ScalarProperty Name="ideCadastro" ColumnName="ideCadastro" />
                 <ScalarProperty Name="txNomeParlamentar" ColumnName="txNomeParlamentar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deputados">
+            <EntityTypeMapping TypeName="RamsesDBModel.Deputado">
+              <MappingFragment StoreEntitySet="Deputados">
+                <ScalarProperty Name="Fone" ColumnName="Fone" />
+                <ScalarProperty Name="Anexo" ColumnName="Anexo" />
+                <ScalarProperty Name="Gabinete" ColumnName="Gabinete" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="SiTuacaoMandato" ColumnName="SiTuacaoMandato" />
+                <ScalarProperty Name="Condicao" ColumnName="Condicao" />
+                <ScalarProperty Name="UFEleito" ColumnName="UFEleito" />
+                <ScalarProperty Name="LegendaPartidoEleito" ColumnName="LegendaPartidoEleito" />
+                <ScalarProperty Name="Profissao" ColumnName="Profissao" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="nomeParlamentar" ColumnName="nomeParlamentar" />
+                <ScalarProperty Name="numLegislatura" ColumnName="numLegislatura" />
+                <ScalarProperty Name="ideCadastro" ColumnName="ideCadastro" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

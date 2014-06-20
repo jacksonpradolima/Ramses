@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a103adf045664870b733e7f9a0c1803c" Name="Diagram1" ZoomLevel="70" >
-        <EntityTypeShape EntityType="RamsesDBModel.Deputado" Width="1.5" PointX="0.5" PointY="0.5" />
-        <EntityTypeShape EntityType="RamsesDBModel.CotaParlamentar" PointX="2.375" PointY="0.5" Width="1.5" />
-        <EntityTypeShape EntityType="RamsesDBModel.PibPorUF" Width="1.5" PointX="4.375" PointY="0.5" />
+        <EntityTypeShape EntityType="RamsesDBModel.CotaParlamentar" Width="1.5" PointX="5.1025280100770889" PointY="19.579217055616535" />
+        <EntityTypeShape EntityType="RamsesDBModel.Deputado" Width="1.5" PointX="2.787879445956964" PointY="13.391397378124015" />
+        <EntityTypeShape EntityType="RamsesDBModel.PibPorUF" Width="1.5" PointX="7.9602421764099232" PointY="10.688355197519229" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

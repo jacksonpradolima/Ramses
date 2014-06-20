@@ -68,22 +68,6 @@ namespace Ramses.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Deputado> Deputados
-        {
-            get
-            {
-                if ((_Deputados == null))
-                {
-                    _Deputados = base.CreateObjectSet<Deputado>("Deputados");
-                }
-                return _Deputados;
-            }
-        }
-        private ObjectSet<Deputado> _Deputados;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<CotaParlamentar> CotaParlamentars
         {
             get
@@ -96,6 +80,22 @@ namespace Ramses.Data
             }
         }
         private ObjectSet<CotaParlamentar> _CotaParlamentars;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Deputado> Deputados
+        {
+            get
+            {
+                if ((_Deputados == null))
+                {
+                    _Deputados = base.CreateObjectSet<Deputado>("Deputados");
+                }
+                return _Deputados;
+            }
+        }
+        private ObjectSet<Deputado> _Deputados;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -118,19 +118,19 @@ namespace Ramses.Data
         #region AddTo Methods
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Deputados EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToDeputados(Deputado deputado)
-        {
-            base.AddObject("Deputados", deputado);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the CotaParlamentars EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToCotaParlamentars(CotaParlamentar cotaParlamentar)
         {
             base.AddObject("CotaParlamentars", cotaParlamentar);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Deputados EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToDeputados(Deputado deputado)
+        {
+            base.AddObject("Deputados", deputado);
         }
     
         /// <summary>
@@ -563,7 +563,7 @@ namespace Ramses.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Double> vlrDocumento
+        public global::System.String vlrDocumento
         {
             get
             {
@@ -573,13 +573,13 @@ namespace Ramses.Data
             {
                 OnvlrDocumentoChanging(value);
                 ReportPropertyChanging("vlrDocumento");
-                _vlrDocumento = StructuralObject.SetValidValue(value, "vlrDocumento");
+                _vlrDocumento = StructuralObject.SetValidValue(value, true, "vlrDocumento");
                 ReportPropertyChanged("vlrDocumento");
                 OnvlrDocumentoChanged();
             }
         }
-        private Nullable<global::System.Double> _vlrDocumento;
-        partial void OnvlrDocumentoChanging(Nullable<global::System.Double> value);
+        private global::System.String _vlrDocumento;
+        partial void OnvlrDocumentoChanging(global::System.String value);
         partial void OnvlrDocumentoChanged();
     
         /// <summary>
