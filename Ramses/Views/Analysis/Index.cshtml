@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li class="active"><i class="fa fa-star"></i>Grid</li>
+            <li><a href="@Url.Action("PivotDeputado")"><i class="fa fa-bar-chart-o"></i>Pivot</a></li>
+        </ol>
+    </div>
+</div>
+<div class="alert alert-info">Gráficos</div>
+@Html.Action("GridAnalysis")

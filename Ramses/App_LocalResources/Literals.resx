@@ -138,6 +138,9 @@
   <data name="lbl_all" xml:space="preserve">
     <value>Tudo</value>
   </data>
+  <data name="lbl_analysis" xml:space="preserve">
+    <value>Análise</value>
+  </data>
   <data name="lbl_another_fields" xml:space="preserve">
     <value>Outros Campos</value>
   </data>

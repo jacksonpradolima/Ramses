@@ -216,11 +216,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Views\Deputado.js" />
     <Content Include="Scripts\Views\CotaParlamentar.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\App_LocalResources\Literals.Designer.cs">
+    <Compile Include="App_LocalResources\Literals.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Literals.resx</DependentUpon>
@@ -228,6 +229,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AnalysisController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ChartExampleController.cs" />
     <Compile Include="Controllers\CotaParlamentarController.cs" />
@@ -269,6 +271,9 @@
     <Content Include="Views\Deputado\_DeputadoPorPartido.cshtml" />
     <Content Include="Views\CotaParlamentar\_CotaMaior.cshtml" />
     <Content Include="Views\CotaParlamentar\_CotaMenor.cshtml" />
+    <Content Include="Views\Deputado\PivotDeputado.cshtml" />
+    <Content Include="Views\Analysis\Index.cshtml" />
+    <Content Include="Views\Analysis\_GridAnalysis.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -292,7 +297,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_Start\App_LocalResources\Literals.resx">
+    <EmbeddedResource Include="App_LocalResources\Literals.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Literals.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>

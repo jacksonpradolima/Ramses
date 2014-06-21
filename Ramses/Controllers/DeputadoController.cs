@@ -77,12 +77,12 @@ namespace Ramses.Controllers
             //objeto chart
             var chart = new Highcharts("chartEstado")
                 //tipo do gráfico
-                .InitChart(new Chart { DefaultSeriesType = ChartTypes.Pie, PlotShadow = false})
+                .InitChart(new Chart { DefaultSeriesType = ChartTypes.Pie, PlotShadow = false })
                 //titulo
                 .SetTitle(new Title { Text = Resources.Literals.lbl_grafico1_titulo })
                 //subtitulo
-                .SetSubtitle(new Subtitle { Text = Resources.Literals.lbl_grafico1_subtitulo})
-                
+                .SetSubtitle(new Subtitle { Text = Resources.Literals.lbl_grafico1_subtitulo })
+
                 //Setar o titulo do Y
                 .SetYAxis(new YAxis { Title = new YAxisTitle { Text = "Número de Deputados" } })
                 .SetTooltip(new Tooltip { Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ this.y +' Deputados'; }" })
@@ -106,8 +106,8 @@ namespace Ramses.Controllers
                }
                );
 
-            return PartialView("_DeputadoPorEstado",chart);
-           
+            return PartialView("_DeputadoPorEstado", chart);
+
         }
 
         /// <summary>
@@ -153,6 +153,22 @@ namespace Ramses.Controllers
 
             return PartialView("_DeputadoPorPartido", chart);
 
+        }
+
+        /// <summary>
+        /// Renderiza uma pivot
+        /// </summary>
+        /// <returns>View contendo a codificação da pivot</returns>
+        public ActionResult PivotDeputado()
+        {
+            return View("PivotDeputado");
+        }
+
+        public JsonResult ListDeputadosPivot()
+        {
+            var list = new DeputadosBiz().GetAll();
+
+            return Json(list, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CotaPib.cs" />
     <Compile Include="ObjectContextExtensions.cs" />
     <Compile Include="RamsesModel.Designer.cs">
       <AutoGen>True</AutoGen>
