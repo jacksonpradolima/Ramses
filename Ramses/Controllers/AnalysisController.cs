@@ -37,7 +37,7 @@ namespace Ramses.Controllers
 
         public JsonResult ListAnalysisPivot()
         {
-            var list = new PibBiz().GetAllCotaPib();
+            var list = new PibBiz().GetAllCotaPib().Take(10).ToList();
 
             return Json(list, JsonRequestBehavior.AllowGet);
         }

@@ -216,6 +216,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Views\Analysis.js" />
     <Content Include="Scripts\Views\Deputado.js" />
     <Content Include="Scripts\Views\CotaParlamentar.js" />
     <Content Include="Web.config" />
@@ -274,6 +275,7 @@
     <Content Include="Views\Deputado\PivotDeputado.cshtml" />
     <Content Include="Views\Analysis\Index.cshtml" />
     <Content Include="Views\Analysis\_GridAnalysis.cshtml" />
+    <Content Include="Views\Analysis\PivotAnalysis.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
