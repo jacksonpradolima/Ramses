@@ -35,7 +35,7 @@
                                 agregateType: "distinct",
                                 label: "Partido"
                             },
-                            state: {
+                            estado: {
                                 field: 'sgUF',
                                 sort: "asc",
                                 showAll: false,
@@ -59,13 +59,13 @@
                                 field: 'vlrDocumento',
                                 agregateType: "sum",
                                 groupType: "none",
-                                label: "Sum"
+                                label: "Soma"
                             },
                             average: {
                                 field: 'vlrDocumento',
                                 agregateType: "average",
                                 groupType: "none",
-                                label: "Average",
+                                label: "Média",
                                 formatter: function (V, f) {
                                     var res = null;
                                     if (typeof (V) === "number") {
@@ -75,7 +75,7 @@
                                 }
                             }
                         },
-                        xfields: ["state", "name"], // Quais campos que vamos colocar em X
+                        xfields: ["estado", "name"], // Quais campos que vamos colocar em X
                         yfields: ["partido"], // Quais campos que vamos colocar em Y
                         zfields: ["sum", "average"],  // Campos de dados, só campos numéricos
                         data: resultData,
@@ -123,7 +123,7 @@
                                 agregateType: "distinct",
                                 label: "Partido"
                             },
-                            state: {
+                            estado: {
                                 field: 'sgUF',
                                 sort: "asc",
                                 showAll: false,
@@ -147,13 +147,13 @@
                                 field: 'vlrDocumento',
                                 agregateType: "sum",
                                 groupType: "none",
-                                label: "Sum"
+                                label: "Soma"
                             },
                             average: {
                                 field: 'vlrDocumento',
                                 agregateType: "average",
                                 groupType: "none",
-                                label: "Average",
+                                label: "Média",
                                 formatter: function (V, f) {
                                     var res = null;
                                     if (typeof (V) === "number") {
@@ -163,7 +163,7 @@
                                 }
                             }
                         },
-                        xfields: ["state", "name"], // Quais campos que vamos colocar em X
+                        xfields: ["estado", "name"], // Quais campos que vamos colocar em X
                         yfields: ["partido"], // Quais campos que vamos colocar em Y
                         zfields: ["sum", "average"],  // Campos de dados, só campos numéricos
                         data: resultData,
