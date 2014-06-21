@@ -36,9 +36,9 @@ namespace Ramses.Controllers
                 //tipo do gráfico
                 .InitChart(new Chart { DefaultSeriesType = ChartTypes.Pie, PlotShadow = false })
                 //titulo
-                .SetTitle(new Title { Text = Resources.Literals.lbl_grafico3_titulo })
+                .SetTitle(new Title { Text = Resources.Literals.lbl_grafico4_titulo })
                 //subtitulo
-                .SetSubtitle(new Subtitle { Text = Resources.Literals.lbl_grafico3_subtitulo })
+                .SetSubtitle(new Subtitle { Text = Resources.Literals.lbl_grafico4_subtitulo })
 
                 //Setar o titulo do Y
                 .SetYAxis(new YAxis { Title = new YAxisTitle { Text = "" } })
