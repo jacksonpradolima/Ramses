@@ -34,7 +34,7 @@
                     <li>@Html.ActionLink("Deputados", "Index", "Deputado", null, new { @class = "navbar-brand" })</li>
                     <li>@Html.ActionLink("Cota Parlamentar", "Index", "CotaParlamentar", null, new { @class = "navbar-brand" })</li>
                      <li>@Html.ActionLink(Resources.Literals.lbl_analysis,"Index","Analysis", null, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Exemplo gráfico","Index","ChartExample", null, new { @class = "navbar-brand" })</li>
+                    @*<li>@Html.ActionLink("Exemplo gráfico","Index","ChartExample", null, new { @class = "navbar-brand" })</li>*@
                 </ul>
             </div>
         </div>
@@ -44,7 +44,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Ramses</p>
         </footer>
     </div>
     @Scripts.Render("~/bundles/alertify")    
